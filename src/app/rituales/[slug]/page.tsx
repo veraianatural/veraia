@@ -19,7 +19,7 @@ export default async function PackPage({ params }: { params: Promise<{ slug: str
         <Link href="/#rituales" className="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-moss/70 hover:text-moss"><ArrowLeft className="h-4 w-4" /> Volver a rituales</Link>
         <div className="grid gap-12 lg:grid-cols-[.95fr_1.05fr] lg:items-start">
           <div className="sticky top-28 overflow-hidden rounded-[3rem] border border-moss/10 bg-white p-3 shadow-soft">
-            <img src={pack.image} alt={pack.name} className="aspect-[4/5] w-full rounded-[2.4rem] object-cover" />
+            <img src={pack.image} alt={pack.name} className="aspect-[4/5] w-full rounded-[2.4rem] object-cover" loading="eager" decoding="async" />
           </div>
 
           <div className="pt-2">
