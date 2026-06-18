@@ -1,0 +1,3 @@
+export function Footer() {
+  return <footer className="bg-moss py-12 text-cream"><div className="container-page grid gap-8 md:grid-cols-3"><div><p className="font-serif text-3xl tracking-[.18em]">VERAIA</p><p className="mt-3 text-sm text-cream/70">Rituales naturales para descansar, desconectar y sentirte mejor cada día.</p></div><div className="text-sm text-cream/70"><p>Hecho con ingredientes naturales.</p><p>Cruelty free · Vegano · Eco friendly</p></div><div className="text-sm text-cream/70 md:text-right"><p>hola@veraia.com</p><p>© {new Date().getFullYear()} VERAIA</p></div></div></footer>;
+}

@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function Gracias() { return <main className="container-page py-24 text-center"><p className="text-sm uppercase tracking-[.3em] text-sage">Pedido confirmado</p><h1 className="mt-4 font-serif text-6xl font-bold">Gracias por elegir VERAIA.</h1><p className="mx-auto mt-6 max-w-2xl text-lg text-moss/75">Tu ritual ha sido confirmado. Recibirás un email con los detalles y prepararemos tu pack con mimo.</p><Link href="/" className="btn-primary mt-8">Volver al inicio</Link></main>; }
