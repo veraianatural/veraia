@@ -1,12 +1,12 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import { ProductImage } from '@/components/product-image';
 
 export function Footer() {
   return (
     <footer className="bg-moss py-14 text-cream">
       <div className="container-page grid gap-10 md:grid-cols-[1.2fr_.8fr_.8fr]">
         <div>
-          <Image src="/images/veraia-logo-main.jpg" alt="VERAIA" width={180} height={150} className="h-24 w-auto rounded-2xl bg-cream/95 object-contain mix-blend-normal" />
+          <ProductImage src="/images/veraia-logo-main.jpg" alt="VERAIA" className="h-24 w-auto rounded-2xl bg-cream/95 object-contain mix-blend-normal" />
           <p className="mt-5 max-w-sm text-sm leading-6 text-cream/70">Rituales naturales para ayudarte a descansar, desconectar y sentirte mejor cada día.</p>
         </div>
         <div className="text-sm text-cream/75">
