@@ -8,13 +8,12 @@ export function Header() {
           <img src="/images/veraia-logo-main.jpg" alt="VERAIA" className="h-14 w-auto rounded-xl object-contain mix-blend-multiply" loading="eager" decoding="async" />
         </Link>
         <nav className="hidden items-center gap-7 text-sm font-semibold tracking-wide text-moss/75 lg:flex">
-          <Link className="hover:text-moss" href="/#vivir">Experiencia</Link>
-          <Link className="hover:text-moss" href="/#elige">Elige tu ritual</Link>
-          <Link className="hover:text-moss" href="/#rituales">Packs</Link>
-          <Link className="hover:text-moss" href="/#regalo">Regalo</Link>
-          <Link className="hover:text-moss" href="/#mensual">Mensual</Link>
+          <Link className="hover:text-moss" href="/experiencia">Experiencia</Link>
+          <Link className="hover:text-moss" href="/rituales">Rituales</Link>
+          <Link className="hover:text-moss" href="/regalo">Regalo</Link>
+          <Link className="hover:text-moss" href="/mensual">Mensual</Link>
         </nav>
-        <Link href="/#elige" className="btn-primary hidden sm:inline-flex">Elegir ritual</Link>
+        <Link href="/rituales" className="btn-primary hidden sm:inline-flex">Elegir ritual</Link>
       </div>
     </header>
   );
