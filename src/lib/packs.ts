@@ -259,7 +259,7 @@ export const packs: Pack[] = [
     intention: 'Recibir bienestar cada mes',
     ritual: 'Cada mes llega una experiencia distinta para descubrir aromas, rituales y productos limitados sin tener que elegir.',
     includes: ['Caja exclusiva mensual', 'Productos limitados', 'Ritual nuevo', 'Regalo sorpresa mensual', 'Acceso QR a contenido relajante'],
-    benefits: ['Ingresos recurrentes para la marca', 'Novedad mensual para el cliente', 'Precio preferente'],
+    benefits: ['Novedad mensual', 'Rituales exclusivos', 'Precio preferente'],
     stripeEnv: 'STRIPE_PRICE_RITUAL_MENSUAL',
     recurring: true,
     badge: 'Suscripción',
@@ -275,7 +275,7 @@ export const launchGift = {
 
 export const upsells = [
   ['Suscripción mensual VERAIA', 'Cada mes una experiencia nueva con productos limitados, ritual guiado y regalo sorpresa.'],
-  ['Cristal Energético Premium (+9€)', 'Cristal seleccionado según la energía del pack para aumentar el valor percibido.'],
+  ['Cristal Energético Premium (+9€)', 'Cristal seleccionado según la energía del pack para completar la intención del ritual.'],
   ['Carta personalizada', 'Mensaje impreso con el nombre del cliente y una intención personalizada.'],
   ['Ritual QR exclusivo', 'Meditaciones guiadas, música relajante, rituales y ejercicios energéticos.'],
   ['Caja regalo premium', 'Presentación de lujo, tarjeta personalizada, envoltorio especial y productos extra.'],

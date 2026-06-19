@@ -44,3 +44,37 @@ img { max-width: 100%; }
   .ambient-orb { animation: none; }
   * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
 }
+
+.experience-frame::before {
+  content: '';
+  position: absolute;
+  inset: -35%;
+  z-index: 1;
+  background: linear-gradient(115deg, transparent 35%, rgba(255,255,255,.38) 50%, transparent 62%);
+  animation: soft-shine 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.ritual-visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(248,241,229,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(248,241,229,.05) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: radial-gradient(circle at center, black, transparent 74%);
+}
+
+.breath-circle {
+  animation: breathe 7.8s ease-in-out infinite;
+}
+
+@keyframes soft-shine {
+  0%, 42% { transform: translateX(-55%) rotate(10deg); opacity: 0; }
+  55% { opacity: 1; }
+  82%, 100% { transform: translateX(55%) rotate(10deg); opacity: 0; }
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(.88); box-shadow: 0 0 45px rgba(196,143,58,.16); }
+  48% { transform: scale(1.08); box-shadow: 0 0 95px rgba(196,143,58,.32); }
+}
