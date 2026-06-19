@@ -11,10 +11,10 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Pack no encontrado' }, { status: 404 });
   }
 
-  const price = process.env[pack.stripeEnv];
+  const price = process.env[pack.stripeEnv] ?? process.env.STRIPE_PRICE_DEFAULT;
 
   if (!price) {
-    return NextResponse.json({ error: `Falta variable ${pack.stripeEnv}` }, { status: 500 });
+    return NextResponse.json({ error: `Falta variable ${pack.stripeEnv} o STRIPE_PRICE_DEFAULT` }, { status: 500 });
   }
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
@@ -34,6 +34,7 @@ export async function POST(request: Request) {
       metadata: {
         pack_slug: pack.slug,
         pack_name: pack.name,
+        intention: pack.intention,
       },
     });
 
