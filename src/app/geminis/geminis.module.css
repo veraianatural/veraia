@@ -1,0 +1,273 @@
+.root {
+  --ink: #463a32;
+  --muted: #81756c;
+  --paper: #f7f4f0;
+  --warm: #d8c8bd;
+  --line: rgba(70, 58, 50, .13);
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.root button, .root input { font: inherit; }
+.root button { -webkit-tap-highlight-color: transparent; }
+
+.deviceScreen {
+  position: relative;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #d5c6bd;
+}
+.deviceImage {
+  position: absolute;
+  inset: 0;
+  background: url('/geminis/phantom.webp') center / cover no-repeat;
+  transform: scale(1.035);
+}
+.deviceShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, rgba(34, 27, 23, .82) 0%, rgba(34, 27, 23, .62) 42%, rgba(34, 27, 23, .12) 100%);
+}
+.devicePanel {
+  position: relative;
+  width: min(90%, 720px);
+  margin-right: min(30vw, 340px);
+  display: grid;
+  gap: clamp(24px, 4vw, 48px);
+  padding: clamp(28px, 6vw, 70px);
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 34px;
+  background: rgba(247,244,240,.88);
+  box-shadow: 0 30px 90px rgba(24, 18, 14, .28);
+  backdrop-filter: blur(18px);
+}
+.realLogo { width: min(340px, 78%); height: auto; mix-blend-mode: multiply; }
+.deviceCopy span, .eyebrow, .sectionHeading span, .categoryHero > span, .kitchenBanner span, .detailTopline span, .measureBlock span, .kitchenCard span, .searchHeader span {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.deviceCopy h1 { max-width: 560px; margin: 10px 0 12px; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(36px, 6vw, 68px); font-weight: 400; line-height: .98; }
+.deviceCopy p { max-width: 530px; margin: 0; color: var(--muted); font-size: clamp(15px, 2vw, 18px); line-height: 1.6; }
+.deviceButton, .primaryButton {
+  border: 0;
+  border-radius: 999px;
+  background: #473a32;
+  color: #fff;
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 0 28px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  cursor: pointer;
+  box-shadow: 0 14px 32px rgba(49, 38, 31, .22);
+  transition: transform .22s ease, background .22s ease;
+}
+.deviceButton:hover, .primaryButton:hover { transform: translateY(-2px); background: #2f2722; }
+
+.welcomeScreen { min-height: 100dvh; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(360px, .85fr); background: #f5f1ed; }
+.welcomeVisual { position: relative; min-height: 100dvh; overflow: hidden; }
+.welcomeVisual > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.welcomeGradient { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,16,13,.06), rgba(20,16,13,.18)); }
+.backRound, .detailClose {
+  position: absolute;
+  z-index: 3;
+  top: 28px;
+  left: 28px;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(255,255,255,.5);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,.84);
+  color: var(--ink);
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+}
+.welcomeBadge { position: absolute; left: 34px; bottom: 34px; z-index: 2; padding: 12px 16px; border-radius: 999px; background: rgba(255,255,255,.86); font-size: 10px; font-weight: 800; letter-spacing: .18em; }
+.welcomeContent { padding: clamp(36px, 7vw, 90px); display: flex; flex-direction: column; justify-content: space-between; gap: 48px; }
+.welcomeLogo { width: min(330px, 85%); mix-blend-mode: multiply; }
+.welcomeContent h1 { margin: 12px 0 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(42px, 6vw, 78px); font-weight: 400; line-height: 1; }
+.welcomeContent h2 { margin: 8px 0 18px; font-size: clamp(22px, 3vw, 36px); font-weight: 500; }
+.welcomeText { max-width: 520px; color: var(--muted); line-height: 1.65; font-size: 16px; }
+
+.appShell { width: 100%; height: 100dvh; display: grid; grid-template-rows: 72px minmax(0,1fr) 76px; background: #f7f4f0; }
+.topbar { display: grid; grid-template-columns: 50px 1fr 50px; align-items: center; padding: 10px clamp(16px,3vw,34px); border-bottom: 1px solid var(--line); background: rgba(247,244,240,.94); backdrop-filter: blur(18px); }
+.iconButton { width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 50%; background: rgba(255,255,255,.7); color: var(--ink); display: grid; place-items: center; cursor: pointer; }
+.brandButton { justify-self: center; border: 0; background: transparent; color: var(--ink); display: grid; gap: 2px; text-align: center; cursor: pointer; }
+.brandButton strong { font-size: 21px; font-weight: 500; letter-spacing: .24em; padding-left: .24em; }
+.brandButton span { color: var(--muted); font-size: 8px; font-weight: 800; letter-spacing: .18em; }
+.scrollArea { overflow-y: auto; overscroll-behavior: contain; padding-bottom: 40px; }
+
+.hero { position: relative; min-height: min(64vh, 650px); overflow: hidden; }
+.hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.heroOverlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(35,27,22,.72) 0%, rgba(35,27,22,.43) 43%, rgba(35,27,22,.02) 78%); }
+.heroContent { position: absolute; left: clamp(24px,6vw,84px); bottom: clamp(28px,7vw,72px); z-index: 2; max-width: 600px; color: white; }
+.heroContent > span { font-size: 10px; font-weight: 800; letter-spacing: .2em; }
+.heroContent h1 { margin: 12px 0 14px; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(40px,6vw,72px); line-height: .98; font-weight: 400; }
+.heroContent p { max-width: 500px; margin: 0 0 24px; line-height: 1.55; opacity: .9; }
+.heroContent button, .kitchenBanner button { border: 1px solid rgba(255,255,255,.42); border-radius: 999px; background: rgba(255,255,255,.9); color: var(--ink); padding: 12px 18px; display: inline-flex; align-items: center; gap: 8px; font-weight: 750; cursor: pointer; }
+
+.section { width: min(1180px, calc(100% - 34px)); margin: 0 auto; padding-top: clamp(34px,5vw,62px); }
+.sectionHeading { display: flex; align-items: end; justify-content: space-between; gap: 18px; margin-bottom: 18px; }
+.sectionHeading span { color: #9a8779; }
+.sectionHeading h2 { margin: 5px 0 0; font-family: Georgia, 'Times New Roman', serif; font-weight: 400; font-size: clamp(28px,4vw,42px); }
+.textButton { border: 0; background: transparent; color: var(--ink); display: flex; align-items: center; gap: 7px; font-weight: 700; cursor: pointer; }
+.quickGrid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 14px; }
+.quickCard { position: relative; min-height: 205px; border: 0; border-radius: 26px; padding: 0; overflow: hidden; text-align: left; background: #e5d9d0; color: white; cursor: pointer; box-shadow: 0 16px 40px rgba(59,46,37,.08); }
+.quickCard > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+.quickCard:hover > img { transform: scale(1.035); }
+.cardShade { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 36%, rgba(32,24,19,.68)); }
+.quickLabel { position: absolute; left: 18px; bottom: 18px; z-index: 2; display: flex; align-items: center; gap: 9px; font-size: 18px; font-weight: 700; }
+.quickArrow { position: absolute; right: 16px; bottom: 18px; z-index: 2; }
+.utilityCard { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; gap: 7px; padding: 22px; background: linear-gradient(145deg,#cab7aa,#a99383); }
+.utilityCard:nth-child(4) { background: linear-gradient(145deg,#50433a,#77665a); }
+.utilityTitle { font-size: 18px; font-weight: 750; }
+.utilityText { color: rgba(255,255,255,.76); font-size: 12px; line-height: 1.4; }
+
+.collectionRail { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(270px, 31%); gap: 14px; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x proximity; }
+.collectionRail::-webkit-scrollbar { height: 6px; }
+.collectionRail::-webkit-scrollbar-thumb { background: #d3c5bb; border-radius: 999px; }
+.collectionCard { scroll-snap-align: start; overflow: hidden; border: 1px solid var(--line); border-radius: 26px; background: #fff; box-shadow: 0 14px 40px rgba(66,52,43,.06); }
+.collectionImage { position: relative; aspect-ratio: 1.34/1; overflow: hidden; cursor: pointer; }
+.collectionImage img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.collectionCard:hover .collectionImage img { transform: scale(1.025); }
+.seriesBadge { position: absolute; left: 14px; top: 14px; border-radius: 999px; padding: 8px 11px; background: rgba(255,255,255,.9); color: var(--ink); font-size: 8px; font-weight: 900; letter-spacing: .13em; }
+.favoriteButton { position: absolute; top: 12px; right: 12px; width: 38px; height: 38px; border: 0; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,.9); color: var(--ink); cursor: pointer; }
+.collectionInfo { width: 100%; min-height: 92px; border: 0; background: #fff; color: var(--ink); padding: 17px; display: flex; align-items: center; justify-content: space-between; gap: 14px; text-align: left; cursor: pointer; }
+.collectionInfo span:first-child { min-width: 0; display: grid; gap: 5px; }
+.collectionInfo strong { font-family: Georgia, 'Times New Roman', serif; font-size: 23px; font-weight: 400; }
+.collectionInfo small { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--muted); font-size: 11px; }
+.roundArrow { flex: 0 0 38px; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; }
+
+.kitchenBanner { position: relative; min-height: 370px; border-radius: 32px; overflow: hidden; color: white; }
+.kitchenBanner > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.kitchenOverlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(31,24,20,.75), rgba(31,24,20,.22)); }
+.kitchenBanner > div:last-child { position: absolute; left: clamp(24px,5vw,60px); bottom: 40px; z-index: 2; }
+.kitchenBanner h2 { margin: 8px 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(38px,5vw,58px); font-weight: 400; }
+.kitchenBanner p { margin: 0 0 20px; opacity: .88; }
+
+.categorySection { padding-top: 24px; padding-bottom: 50px; }
+.categoryHero { min-height: 220px; border-radius: 28px; padding: clamp(26px,5vw,54px); background: linear-gradient(135deg,#d9c9be,#efe8e2); display: flex; flex-direction: column; justify-content: end; }
+.categoryHero button { align-self: flex-start; border: 0; padding: 0; margin-bottom: auto; background: transparent; color: var(--ink); display: flex; align-items: center; gap: 7px; font-weight: 700; cursor: pointer; }
+.categoryHero > span { color: #8d7666; margin-top: 24px; }
+.categoryHero h1 { margin: 6px 0 7px; font-family: Georgia,'Times New Roman',serif; font-size: clamp(38px,5vw,58px); font-weight: 400; }
+.categoryHero p { margin: 0; color: var(--muted); }
+.kitchenCategoryHero { background: linear-gradient(135deg,#4e4037,#8a7566); color: white; }
+.kitchenCategoryHero button, .kitchenCategoryHero > span, .kitchenCategoryHero p { color: rgba(255,255,255,.82); }
+.fullGrid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 15px; margin-top: 18px; }
+.catalogNote { margin-top: 18px; border: 1px solid var(--line); border-radius: 22px; background: white; padding: 18px 20px; display: flex; gap: 14px; align-items: flex-start; }
+.catalogNote div { display: grid; gap: 3px; }
+.catalogNote span { color: var(--muted); font-size: 13px; }
+.kitchenGrid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 15px; margin-top: 18px; }
+.kitchenCard { overflow: hidden; border: 1px solid var(--line); border-radius: 26px; background: white; }
+.kitchenCard > img { width: 100%; aspect-ratio: 1.55/1; object-fit: cover; display: block; }
+.kitchenCard > div { padding: 18px 20px 22px; }
+.kitchenCard span { color: #9a8779; }
+.kitchenCard h3 { margin: 5px 0 8px; font-family: Georgia,'Times New Roman',serif; font-size: 28px; font-weight: 400; }
+.kitchenCard p { margin: 0; color: var(--muted); line-height: 1.5; font-size: 13px; }
+
+.bottomNav { border-top: 1px solid var(--line); background: rgba(255,255,255,.92); backdrop-filter: blur(18px); display: grid; grid-template-columns: repeat(4,1fr); padding: 6px max(12px, env(safe-area-inset-left)) max(6px, env(safe-area-inset-bottom)); }
+.bottomNav button { position: relative; border: 0; background: transparent; color: #92867e; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 10px; cursor: pointer; }
+.bottomNav .activeNav { color: var(--ink); }
+.bottomNav b { position: absolute; top: 1px; margin-left: 28px; min-width: 17px; height: 17px; border-radius: 999px; display: grid; place-items: center; background: var(--ink); color: white; font-size: 9px; }
+
+.modalBackdrop { position: fixed; inset: 0; z-index: 10005; display: flex; align-items: flex-end; justify-content: center; padding: 18px; background: rgba(26,20,16,.5); backdrop-filter: blur(7px); }
+.searchSheet, .detailSheet { width: min(760px,100%); max-height: min(83dvh,860px); overflow: auto; border-radius: 30px 30px 22px 22px; background: #f8f5f1; box-shadow: 0 -20px 70px rgba(24,17,13,.24); }
+.sheetHandle { width: 52px; height: 5px; border-radius: 999px; background: #cbbdb3; margin: 10px auto 2px; }
+.searchHeader { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px 12px; }
+.searchHeader span { color: #9a8779; }
+.searchHeader h2 { margin: 3px 0 0; font-family: Georgia,'Times New Roman',serif; font-size: 34px; font-weight: 400; }
+.searchBox { margin: 0 20px 16px; min-height: 54px; border: 1px solid var(--line); border-radius: 18px; padding: 0 16px; display: flex; align-items: center; gap: 10px; background: white; }
+.searchBox input { flex: 1; border: 0; outline: 0; background: transparent; color: var(--ink); font-size: 16px; }
+.searchResults { display: grid; padding: 0 12px 18px; }
+.searchResults > button { border: 0; border-bottom: 1px solid var(--line); background: transparent; color: var(--ink); min-height: 67px; padding: 10px 9px; display: flex; align-items: center; justify-content: space-between; gap: 12px; text-align: left; cursor: pointer; }
+.searchResults > button span { display: grid; gap: 3px; }
+.searchResults small { color: var(--muted); }
+
+.detailSheet { position: relative; overflow: hidden auto; }
+.detailSheet > img { width: 100%; aspect-ratio: 1.45/1; object-fit: cover; display: block; }
+.detailClose { position: absolute; left: auto; right: 18px; top: 18px; }
+.detailContent { padding: 22px; }
+.detailTopline { display: flex; align-items: center; justify-content: space-between; }
+.detailTopline span { color: #9a8779; }
+.detailTopline button { border: 0; background: transparent; color: var(--ink); cursor: pointer; }
+.detailContent h2 { margin: 5px 0 8px; font-family: Georgia,'Times New Roman',serif; font-size: 42px; font-weight: 400; }
+.detailContent > p { margin: 0; color: var(--muted); line-height: 1.55; }
+.measureBlock { margin-top: 22px; border-radius: 18px; padding: 17px; background: #eee6e0; display: grid; gap: 7px; }
+.measureBlock span { color: #907c6e; }
+.measureBlock strong { font-size: 16px; font-weight: 700; }
+.verified { margin-top: 15px; display: flex; align-items: center; gap: 9px; color: #776b63; font-size: 12px; }
+
+@media (max-width: 900px) {
+  .devicePanel { margin-right: 0; }
+  .welcomeScreen { grid-template-columns: 1fr; grid-template-rows: 44dvh auto; min-height: 100dvh; overflow-y: auto; }
+  .welcomeVisual { min-height: 44dvh; }
+  .welcomeContent { min-height: 56dvh; padding: 30px 24px; gap: 30px; }
+  .quickGrid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .collectionRail { grid-auto-columns: minmax(255px, 55%); }
+  .fullGrid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+
+@media (max-width: 600px) {
+  .deviceScreen { align-items: end; }
+  .deviceImage { background-position: 62% center; }
+  .deviceShade { background: linear-gradient(180deg, rgba(30,23,19,.08) 0%, rgba(30,23,19,.35) 44%, rgba(30,23,19,.82) 100%); }
+  .devicePanel { width: 100%; border-radius: 32px 32px 0 0; padding: 28px 22px max(30px,env(safe-area-inset-bottom)); background: rgba(247,244,240,.94); }
+  .deviceCopy h1 { font-size: 39px; }
+  .welcomeContent h1 { font-size: 44px; }
+  .appShell { grid-template-rows: 64px minmax(0,1fr) 70px; }
+  .topbar { padding-inline: 12px; }
+  .brandButton strong { font-size: 17px; }
+  .hero { min-height: 58vh; }
+  .heroOverlay { background: linear-gradient(180deg, rgba(35,27,22,.05), rgba(35,27,22,.72)); }
+  .heroContent { left: 22px; right: 22px; bottom: 30px; }
+  .heroContent h1 { font-size: 42px; }
+  .section { width: calc(100% - 24px); }
+  .sectionHeading { align-items: center; }
+  .sectionHeading h2 { font-size: 30px; }
+  .quickGrid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+  .quickCard { min-height: 166px; border-radius: 21px; }
+  .utilityCard { padding: 17px; }
+  .collectionRail { grid-auto-columns: 82%; }
+  .fullGrid, .kitchenGrid { grid-template-columns: 1fr; }
+  .categoryHero { min-height: 200px; border-radius: 24px; }
+  .modalBackdrop { padding: 0; }
+  .searchSheet, .detailSheet { width: 100%; max-height: 88dvh; border-radius: 28px 28px 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root *, .root *::before, .root *::after { scroll-behavior: auto !important; transition: none !important; }
+}
+
+.emptyState {
+  margin-top: 18px;
+  min-height: 260px;
+  border: 1px dashed rgba(70, 58, 50, .2);
+  border-radius: 28px;
+  background: rgba(255,255,255,.62);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 30px;
+  text-align: center;
+}
+.emptyState strong { font-family: Georgia,'Times New Roman',serif; font-size: 25px; font-weight: 400; }
+.emptyState span { color: var(--muted); font-size: 13px; }
+.emptyState button { margin-top: 8px; border: 0; border-radius: 999px; background: var(--ink); color: white; padding: 12px 18px; font-weight: 700; cursor: pointer; }
