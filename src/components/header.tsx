@@ -1,6 +1,15 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export function Header() {
+  const pathname = usePathname();
+
+  // /geminis is a completely independent commercial experience.
+  // Do not show any VERAIA branding or navigation inside that route.
+  if (pathname?.startsWith('/geminis')) return null;
+
   return (
     <header className="sticky top-0 z-40 border-b border-moss/10 bg-[#fbf5eb]/88 backdrop-blur-xl">
       <div className="container-page flex h-20 items-center justify-between gap-5">

@@ -1,6 +1,14 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export function Footer() {
+  const pathname = usePathname();
+
+  // /geminis has its own identity and must not inherit VERAIA footer content.
+  if (pathname?.startsWith('/geminis')) return null;
+
   return (
     <footer className="bg-moss py-14 text-cream">
       <div className="container-page grid gap-10 md:grid-cols-[1.2fr_.8fr_.8fr]">
