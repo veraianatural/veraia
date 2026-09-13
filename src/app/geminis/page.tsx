@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import {
   ArrowLeft,
@@ -383,6 +384,9 @@ export default function GeminisPage() {
               <button className={styles.primaryButton} onClick={() => { setStage('catalog'); setCategory('configurador'); }}>
                 Configurar un mueble <SlidersHorizontal size={19} />
               </button>
+              <Link className={styles.interactiveCatalogButton} href={`/geminis/catalogo?modo=${deviceMode === 'mobile' ? 'mobile' : 'tablet'}`}>
+                Catálogo interactivo <BookOpen size={19} />
+              </Link>
               <button className={styles.welcomeSecondary} onClick={() => { setStage('catalog'); setCategory('inicio'); }}>
                 Explorar catálogo <ArrowRight size={19} />
               </button>
@@ -458,6 +462,12 @@ export default function GeminisPage() {
                     <span className={styles.utilityText}>{orderCount ? `${orderCount} ${orderCount === 1 ? 'unidad preparada' : 'unidades preparadas'}` : 'Configura muebles, cantidades y prepara el pedido.'}</span>
                     <ChevronRight className={styles.quickArrow} size={20} />
                   </button>
+                  <Link className={`${styles.quickCard} ${styles.catalogBookQuick}`} href={`/geminis/catalogo?modo=${deviceMode === 'mobile' ? 'mobile' : 'tablet'}`}>
+                    <span className={styles.configIcon}><BookOpen size={31} /></span>
+                    <span className={styles.utilityTitle}>Catálogo interactivo</span>
+                    <span className={styles.utilityText}>Abre el catálogo real y pásalo página a página como un libro.</span>
+                    <ChevronRight className={styles.quickArrow} size={20} />
+                  </Link>
                   <button className={`${styles.quickCard} ${styles.utilityCard}`} onClick={() => setSearchOpen(true)}>
                     <Search size={34} />
                     <span className={styles.utilityTitle}>Buscar modelo</span>

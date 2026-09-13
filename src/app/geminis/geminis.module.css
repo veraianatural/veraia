@@ -152,6 +152,24 @@
   cursor: pointer;
 }
 .primaryButton { align-self: flex-start; min-height: 52px; }
+.welcomeActions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.interactiveCatalogButton,
+.welcomeSecondary {
+  min-height: 52px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 14px 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: var(--ink);
+  background: #fff;
+  font-weight: 750;
+  text-decoration: none;
+  cursor: pointer;
+}
+.interactiveCatalogButton { background: #8f735f; color: #fff; border-color: #8f735f; }
 
 .appShell {
   min-height: 100dvh;
@@ -207,6 +225,7 @@
 .configuratorQuick { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; gap: 7px; padding: 22px; }
 .utilityCard { background: linear-gradient(145deg,#cab7aa,#9e897a); }
 .configuratorQuick { background: linear-gradient(145deg,#3a312b,#776153); }
+.catalogBookQuick { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; gap: 7px; padding: 22px; background: linear-gradient(145deg,#6f594b,#a78b77); text-decoration: none; }
 .configIcon { position: absolute; left: 20px; top: 20px; width: 52px; height: 52px; border-radius: 17px; display: grid; place-items: center; background: rgba(255,255,255,.13); }
 .utilityTitle { font-size: 18px; font-weight: 750; }
 .utilityText { color: rgba(255,255,255,.76); font-size: 12px; line-height: 1.4; }
@@ -705,10 +724,12 @@
 
 /* En MÓVIL se prioriza la secuencia vertical y controles grandes al pulgar. */
 .mobileMode .welcomeActions { display: grid; grid-template-columns: 1fr; width: 100%; }
-.mobileMode .welcomeActions > button { width: 100%; }
+.mobileMode .welcomeActions > button,
+.mobileMode .welcomeActions > a { width: 100%; }
 .mobileMode .quickGrid { grid-template-columns: repeat(2,minmax(0,1fr)); }
 .mobileMode .configuratorQuick,
-.mobileMode .orderQuick { grid-column: 1 / -1; min-height: 132px; }
+.mobileMode .orderQuick,
+.mobileMode .catalogBookQuick { grid-column: 1 / -1; min-height: 132px; }
 .mobileMode .resultActions { grid-template-columns: 1fr; }
 .mobileMode .quantityPickerLarge { grid-template-columns: 52px 1fr 52px; }
 .mobileMode .quantityPickerLarge > button { width: 52px; height: 52px; }
